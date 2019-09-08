@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/request-price.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/request-price.css</name></action>
+        </reference>
+    </default>
+
+    <requestprice_index_popup translate="label" module="Alt_RequestPrice">
+        <reference name="content">
+            <block type="requestprice/popup" name="requestprice_popup" template="requestprice/popup.phtml" />
+        </reference>
+    </requestprice_index_popup>
+</layout>
+	

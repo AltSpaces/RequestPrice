@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Alt_RequestPrice>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.0.1</version>
+    </Alt_RequestPrice>
+  </modules>
+</config>

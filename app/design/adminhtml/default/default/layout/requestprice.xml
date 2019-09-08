@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_requests_grid>
+        <reference name="content">
+            <block type="requestprice/adminhtml_requests_grid" name="adminhtml_requests.grid"/>
+        </reference>
+    </adminhtml_requests_grid>
+    <adminhtml_requests_index>
+        <reference name="content">
+            <block type="requestprice/adminhtml_requests_grid" name="adminhtml_requests.grid"/>
+        </reference>
+    </adminhtml_requests_index>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+<config>
+  <modules>
+    <Alt_RequestPrice>
+      <version>0.0.1</version>
+    </Alt_RequestPrice>
+  </modules>
+
+  <admin>
+    <routers>
+      <requestprice_admin>
+        <use>admin</use>
+        <args>
+          <module>Alt_RequestPrice</module>
+          <frontName>requestprice_admin</frontName>
+        </args>
+      </requestprice_admin>
+    </routers>
+  </admin>
+
+  <adminhtml>
+      <layout>
+        <updates>
+          <requestprice>
+            <file>requestprice.xml</file>
+          </requestprice>
+        </updates>
+      </layout>
+      <menu>
+        <customer>
+          <children>
+            <requestprice>
+              <title>Price Requests</title>
+              <sort_order>300</sort_order>
+              <action>requestprice_admin/adminhtml_requests</action>
+            </requestprice>
+          </children>
+        </customer>
+      </menu>
+  </adminhtml>
+
+  <frontend>
+    <routers>
+      <requestprice>
+        <use>standard</use>
+        <args>
+          <module>Alt_RequestPrice</module>
+          <frontName>requestprice</frontName>
+        </args>
+      </requestprice>
+    </routers>
+
+    <layout>
+      <updates>
+        <requestprice>
+          <file>requestprice.xml</file>
+        </requestprice>
+      </updates>
+    </layout>
+
+    <translate>
+      <modules>
+        <requestprice>
+          <files>
+            <default>Alt_RequestPrice.csv</default>
+          </files>
+        </requestprice>
+      </modules>
+    </translate>
+  </frontend>
+
+  <global>
+
+    <blocks>
+      <requestprice>
+        <class>Alt_RequestPrice_Block</class>
+      </requestprice>
+    </blocks>
+
+    <resources>
+      <requestprice_setup>
+        <setup>
+          <module>Alt_RequestPrice</module>
+          <class>Alt_RequestPrice_Model_Resource_Setup</class>
+        </setup>
+      </requestprice_setup>
+    </resources>
+
+    <models>
+      <requestprice>
+        <class>Alt_RequestPrice_Model</class>
+        <resourceModel>requestprice_resource</resourceModel>
+      </requestprice>
+      <requestprice_resource>
+        <class>Alt_RequestPrice_Model_Resource</class>
+        <entities>
+          <requests>
+            <table>alt_requestprice_requests</table>
+          </requests>
+        </entities>
+      </requestprice_resource>
+    </models>
+
+    <helpers>
+      <requestprice>
+        <class>Alt_RequestPrice_Helper</class>
+      </requestprice>
+    </helpers>
+  </global>
+
+</config>

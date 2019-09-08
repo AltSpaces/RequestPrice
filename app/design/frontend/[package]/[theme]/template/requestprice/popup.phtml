@@ -1,0 +1,35 @@
+<div id="request-popup">
+    <div class="request-popup-overlay background-overlay"></div>
+    <div class="request-price-modal">
+        <form action="<?php echo $this->getUrl('requestprice/index/submit') ?>" method="post" enctype="multipart/form-data" id="request-form">
+            <span class="close">close</span>
+            <div class="success" style="display: none; margin-bottom: 30px;">
+                <div class="close">close</div>
+                <div class="text">
+                    <span class="success-text"><?php echo $this->__('Your request was successfully sent!');?></span>
+                </div>
+            </div>
+            <div class="popup-content">
+                <div class="popup-top">
+                    <span class="title-text"><?= $this->__('Send request for receiving product price')?></span>
+                </div>
+                <div class="popup-body">
+                    <label class="add-label"><?php echo $this->__("Your name:")?></label>
+                    <input class="add-input required-entry" type="text" name="customer_name" placeholder="<?= __('Enter  your name')?>">
+
+                    <label class="add-label"><?php echo $this->__('Your email')?>:</label>
+                    <input class="add-input required-entry validate-email" type="text" name="customer_email" placeholder="<?= __('Enter your email')?>">
+
+                    <label class="add-label"><?php echo $this->__('Your comment')?>:</label>
+                    <textarea class="add-info" name="customer_comment"></textarea>
+
+                    <input type="hidden" name="product_sku" value="<?= $this->getProductSku(); ?>">
+                    <input type="hidden" name="is_ajax" value="1">
+                </div>
+                <div class="popup-bottom">
+                    <div class="btn-request-price"><?= $this->__("Submit Request"); ?></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
